@@ -1,0 +1,39 @@
+<link href="https://fonts.googleapis.com/css?family=El+Messiri&display=swap" rel="stylesheet">
+{% macro displayPitches(pitchList)%}
+{%for pitch in pitchList%}
+<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 review-card">
+    <div class="jumbotron">
+        <h2 style="font-family: 'El Messiri', sans-serif; text-align: center ; text-decoration-line: underline">
+            {{pitch.pitchTitle}}</h2>
+        <p style="font-size: 15px">{{pitch.pitchWrite}}</p>
+        <p style="font-size: 15px">Written by: {{pitch.user.username}}</p>
+        <p><a href="{{url_for('main.commentPitch',pitchId=pitch.id)}}" class="btn btn-primary"
+                style="font-family: 'El Messiri', sans-serif">Comment</a> 
+                <a href="{{url_for('main.commentPitch',pitchId=pitch.id)}}" class="btn btn-primary"
+                style="font-family: 'El Messiri', sans-serif">View Comment</a><br><br></p>
+
+
+    </div>
+</div>
+{%endfor%}
+{%endmacro%}
+
+{%macro displayComments(comments)%}
+{%for comment in comments%}
+<div class="table jumbotron">
+    <h5 style="font-family: 'El Messiri', sans-serif; text-align: center ; text-decoration-line: underline">
+        posted by:{{comment.user.username}}</h5>
+    <p style="font-size: 15px">Comment:{{comment.commentWrite}}</p>
+    <p style="font-size: 15px">Posted on:{{comment.timeComment}}</p>
+</div>
+
+{%endfor%}
+{%endmacro%}
+<style>
+    @import url('https://fonts.googleapis.com/css?family=El+Messiri&display=swap');
+
+    p {
+        font-family: 'El Messiri', sans-serif;
+        color: red
+    }
+</style>
