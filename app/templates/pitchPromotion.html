@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% import 'macros.html' as macro %}
+
+{%block content%}
+<div>
+    <img src="https://images.unsplash.com/photo-1512106374988-c95f566d39ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+        alt="promotion" height="170px" width="300px" style="margin-left: 500px;border-radius: 3000px">
+    <h1 style="text-align: center">Promotion Pitches</h1>
+</div>
+<div class="container">
+    <hr>
+    <div class="row">
+        {{macro.displayPitches(pitches)}}
+    </div>
+    <!-- <div>
+        {%if comments%}
+
+        {{macro.displayComments(comments)}}
+        {%else%}
+        <p>no comments yet</p>
+        {%endif%}
+    </div> -->
+</div>
+<style>
+    @import url('https://fonts.googleapis.com/css?family=El+Messiri&display=swap');
+
+    h1 {
+        font-family: 'El Messiri', sans-serif;
+    }
+</style>
+{%endblock%}

@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% import 'macros.html' as macro %}
+
+{%block content%}
+<div>
+    <img src="https://images.wallpaperscraft.com/image/jared_rosholt_ultimate_fighting_championship_fighter_interviews_107145_300x168.jpg"
+        alt="interview" style="margin-left: 500px;border-radius: 3000px">
+    <h1 style="text-align: center">Interview Pitches</h1>
+</div>
+<div class="container">
+    <hr>
+    <div class="row">
+        {{macro.displayPitches(pitches)}}
+    </div>
+    <!-- <div>
+        {%if comments%}
+
+        {{macro.displayComments(comments)}}
+        {%else%}
+        <p>no comments yet</p>
+        {%endif%}
+    </div> -->
+    
+</div>
+{%endblock%}
+<style>
+    @import url('https://fonts.googleapis.com/css?family=El+Messiri&display=swap');
+
+    h1 {
+        font-family: 'El Messiri', sans-serif;
+    }
+</style>
